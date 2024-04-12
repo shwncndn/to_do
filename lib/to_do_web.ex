@@ -87,9 +87,12 @@ defmodule ToDoWeb do
       import ToDoWeb.CoreComponents
       import ToDoWeb.Gettext
 
+      import LiveSvelte
+
+      use LiveSvelte.Components
+
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
-
       # Routes generation with the ~p sigil
       unquote(verified_routes())
     end

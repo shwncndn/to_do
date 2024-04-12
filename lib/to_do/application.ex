@@ -8,6 +8,7 @@ defmodule ToDo.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      # {NodeJS.Supervisor, [path: LiveSvelte.SSR.NodeJS.server_path(), pool_size: 4]},
       ToDoWeb.Telemetry,
       ToDo.Repo,
       {DNSCluster, query: Application.get_env(:to_do, :dns_cluster_query) || :ignore},
